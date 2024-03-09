@@ -76,6 +76,9 @@ group :test do
   gem 'simplecov'
 end
 
+# Shim to load environment variables from .env into ENV in development. [https://github.com/bkeepers/dotenv]
+gem 'dotenv', groups: %i[development test]
+
 # A fixtures replacement with a straightforward definition syntax. [https://github.com/thoughtbot/factory_bot]
 gem 'factory_bot'
 
@@ -86,7 +89,7 @@ gem 'factory_bot_rails'
 gem 'faraday'
 
 # Storing and accessing secrets [https://github.com/laserlemon/figaro]
-gem 'figaro'
+# gem 'figaro'
 
 # A small gem which causes rails console to open pry [https://github.com/pry/pry-rails]
 gem 'pry-rails'
