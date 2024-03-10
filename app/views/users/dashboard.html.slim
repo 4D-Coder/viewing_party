@@ -1,0 +1,16 @@
+h1 #{@user.name}'s Dashboard
+br
+
+section.viewing_parties
+  - @user.viewing_parties.each do |p|
+    div.viewing_party
+      | Party Time: #{p.date} at #{p.start_time}
+      br
+      | Host: #{p.find_host.name}
+      br
+      | Who's Coming?
+      br
+        ol
+          - p.users.each do |attendee|
+            li= attendee.name
+        br
