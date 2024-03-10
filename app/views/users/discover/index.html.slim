@@ -1,0 +1,14 @@
+/ <h1>Users::Discover#index</h1>
+/ <p>Find me in app/views/users/discover/index.html.erb</p>
+
+h2 Discover Movies
+
+= link_to "Discover Top Rated Movies", user_movies_path, method: :get, class: "btn btn-primary"
+hr
+br
+
+h2 Search Movies
+= form_with(url: user_movies_path, method: :get) do |f|
+  = f.text_field :movie_title_search, class: "form-control"
+  = f.submit "Search Movie by Title", class: "btn btn-primary"
+
