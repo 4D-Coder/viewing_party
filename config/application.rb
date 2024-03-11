@@ -33,5 +33,8 @@ module ViewingPartyLite7
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # set factory_bot generated factory output to the spec directory
+    config.generators { |g| g.factory_bot dir: 'spec/factories' }
   end
 end

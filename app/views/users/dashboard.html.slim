@@ -1,0 +1,19 @@
+h1 id='main_header' #{@user.name}'s Dashboard
+br
+
+section.viewing_parties
+  - @user.viewing_parties.each do |p|
+    div.viewing_party
+      | Party Time: #{p.date} at #{p.start_time}
+      br
+      | Host: #{p.find_host.name}
+      br
+      | Who's Coming?
+      br
+        ol
+          - p.users.each do |attendee|
+            li= attendee.name
+        br
+
+section.discover
+  = button_to 'Discover Top Rated Movies', user_discover_index_path, method: :get, class: 'btn btn-primary'
