@@ -12,7 +12,4 @@ Rails.application.routes.draw do
     resources :movies, only: %i[index], module: 'users'
     # get '/discover/index', to: 'users/discover#index', as: 'discover_index'
   end
-
-  namespace :users do
-  end
 end
