@@ -6,7 +6,7 @@ hr
 
 - i = 0
 div class="results"
-- @movie_facade.movies.each do |m|
+- @movies_facade.top_rated_movies.each do |m|
   div id="movie_#{i}"
     h3 class= "movie_title"
       = link_to "#{m.title}", movie_details_path(m.id), method: :get

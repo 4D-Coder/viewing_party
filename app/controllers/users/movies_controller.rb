@@ -1,5 +1,5 @@
 class Users::MoviesController < ApplicationController
   def index
-    require 'pry'; binding.pry
+    @movies_facade = MoviesFacade.new
   end
 end

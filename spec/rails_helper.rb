@@ -74,14 +74,13 @@ Shoulda::Matchers.configure do |config|
   end
 end
 
-VCR.configure do |config|
-  config.hook_into :webmock, :faraday
-  config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
-  config.filter_sensitive_data('<TMDB_BEARER>') { ENV['TMDB_BEARER'] }
-  config.configure_rspec_metadata!
-  config.debug_logger = Logger.new($stdout)
-  config.default_cassette_options = {
-    record: :once,
-    re_record_interval: 7.days
-  }
-end
+# VCR.configure do |config|
+#   config.hook_into :webmock, :faraday
+#   config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
+#   config.filter_sensitive_data('<TMDB_BEARER>') { ENV['TMDB_BEARER'] }
+#   config.configure_rspec_metadata!
+#   config.default_cassette_options = {
+#     record: :once,
+#     re_record_interval: 7.days
+#   }
+# end

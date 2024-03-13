@@ -7,7 +7,9 @@ RSpec.describe TmdbService do
     end
   end
 
-  # describe '.movies' do
-  #   it 'gets '
-  # end
+  describe '.top_rated_movies' do
+    it 'returns parsed JSON, symbolized hash of movie result data' do
+      expect
+    end
+  end
 end
