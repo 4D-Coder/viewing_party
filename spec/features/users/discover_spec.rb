@@ -42,7 +42,7 @@ RSpec.describe 'Example Page', type: :feature do
               click_link('Discover Top Rated Movies')
             end
 
-            expect(page).to have_current_path(users_movies_path)
+            expect(page).to have_current_path(user_movies_path(user_id: user.id))
             within('div.results') do
               expect(page).to have_selector('h3.movie_title')
               expect(page).to have_selector('p.vote_average')

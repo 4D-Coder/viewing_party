@@ -11,6 +11,7 @@ RSpec.describe MoviesFacade, type: :model do
       it 'returns a collection of 20 movie objects' do
         results = facade.top_rated_movies
 
+        expect(results).to be_an Array
         expect(results.count).to eq(20)
         results.each { |r| expect(r).to be_a Movie }
       end

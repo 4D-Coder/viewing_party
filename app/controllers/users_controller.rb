@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     user = User.new(user_params)
     if user.save
       flash[:success] = 'Successfully Created New User'
-      redirect_to user_path(user)
+      redirect_to user_dashboard_path(user)
     else
       flash[:error] = "#{error_message(user.errors)}"
       redirect_to register_user_path

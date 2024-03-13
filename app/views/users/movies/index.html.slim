@@ -1,15 +1,15 @@
 / <h1>Users::Movies#index</h1>
-/ <p>Find me in app/views/users/movies/index.html.erb</p>
+/ <p>Find me in app/views/users/movies/index.html.slim</p>
 
 h2 Top Rated Movie Results
 hr
 
 - i = 0
 div class="results"
-- @movies_facade.top_rated_movies.each do |m|
-  div id="movie_#{i}"
-    h3 class= "movie_title"
-      = link_to "#{m.title}", movie_details_path(m.id), method: :get
-    p class= "vote_average"
-      #{m.rating}
-    = i += 1
+  - @movies_facade.top_rated_movies.each do |m|
+    div id="movie_#{i}"
+      h3 class="movie_title"
+        = link_to "#{i +1}. #{m.title}", user_movie_path(id: m.id), method: :get
+      p class="vote_average"
+        #{m.rating}
+      - i += 1
