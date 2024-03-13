@@ -31,7 +31,23 @@ RSpec.describe 'Example Page', type: :feature do
     describe 'As a User' do
       describe 'happy paths' do
         it 'I should see a button to discover top movies' do
-          expect(page).to have_selector(:link_or_button, 'Discover Top Rated Movies')
+          within('div.top_rated_discover') do
+            expect(page).to have_link('Discover Top Rated Movies')
+          end
+        end
+
+        describe 'I can click on the Discover Top Rated Movies Button and see' do
+          scenario "The results page with each movie's title as a link and vote average" do
+            within('div.top_rated_discover') do
+              click_link('Discover Top Rated Movies')
+            end
+
+            expect(page).to have_current_path(users_movies_path)
+            within('div.results') do
+              expect(page).to have_selector('h3.movie_title')
+              expect(page).to have_selector('p.vote_average')
+            end
+          end
         end
 
         it 'I should see a text field to enter keyword(s) to search movie by title and a submit button' do

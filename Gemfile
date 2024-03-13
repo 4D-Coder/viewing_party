@@ -74,6 +74,8 @@ group :test do
   gem 'launchy'
   gem 'rspec-rails'
   gem 'simplecov'
+  gem 'vcr'
+  gem 'webmock'
 end
 
 # Shim to load environment variables from .env into ENV in development. [https://github.com/bkeepers/dotenv]
@@ -102,7 +104,3 @@ gem 'json_matchers'
 
 # Validates JSON attributes against a JSON schema. [https://github.com/mirego/activerecord_json_validator]
 gem 'activerecord_json_validator'
-
-gem 'vcr'
-
-gem 'webmock'
