@@ -4,12 +4,23 @@
 h2 Top Rated Movie Results
 hr
 
-- i = 0
-div class="results"
-  - @movies_facade.top_rated_movies.each do |m|
-    div id="movie_#{i}"
-      h3 class="movie_title"
-        = link_to "#{i +1}. #{m.title}", user_movie_path(id: m.id), method: :get
-      p class="vote_average"
-        #{m.rating}
+- if @search_results.present?
+  - i = 1
+  div class="search_results"
+    - @search_results.each do |m|
+      div id="movie_#{i}"
+        h3 class="movie_title"
+          = link_to "#{i}. #{m.title}", user_movie_path(id: m.id), method: :get
+        p class="vote_average"
+          | Vote Average: #{m.vote_average}
+      - i += 1
+- else
+  - i = 1
+  div class='results'
+    - @movies_facade.top_rated_movies.each do |m|
+      div id="movie_#{i}"
+        h3 class="movie_title"
+          = link_to "#{i}. #{m.title}", user_movie_path(id: m.id), method: :get
+        p class="vote_average"
+          | Vote Average: #{m.vote_average}
       - i += 1

@@ -9,7 +9,8 @@ hr
 br
 
 h2 Search Movies
-= form_with(url: user_movies_path, method: :get) do |f|
-  = f.text_field :movie_title_search, class: "form-control"
-  = f.submit "Search Movie by Title", class: "btn btn-primary"
+div class='search_movies'
+  = form_with(url: user_movies_path, method: :get) do |f|
+    = f.text_field :search, class: "form-control"
+    = f.submit "Search Movie by Title", class: "btn btn-primary"
 
