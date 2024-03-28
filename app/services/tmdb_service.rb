@@ -1,3 +1,6 @@
+# frozen_string_literal: false
+
+# Service class responsible for making all connections to the TMDB API
 class TmdbService < ApplicationService
   class << self
     def authenticate

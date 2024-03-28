@@ -1,3 +1,6 @@
+# frozen_string_literal: false
+
+# Facade handling business logic of finding movie search results
 class MoviesFacade
   def top_rated_movies
     results = TmdbService.top_rated_movies
