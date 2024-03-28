@@ -9,7 +9,9 @@ class TmdbService < ApplicationService
     end
 
     def search_movies(query)
-      conn.get()
+      conn.get('https://api.themoviedb.org/3/search/movie') do |r|
+        r.params['query'] = query
+      end
     end
   end
 end
